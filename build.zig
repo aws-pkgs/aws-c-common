@@ -115,6 +115,7 @@ pub fn build(b: *std.Build) void {
             }
         },
     }
+    lib.installConfigHeader(config_h);
     lib.installHeadersDirectory(b.path("include"), "", .{});
     lib.installHeadersDirectory(aws_c_common_dep.path("include"), "", .{
         .exclude_extensions = &.{"allocator.h"},
